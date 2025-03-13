@@ -1,0 +1,38 @@
+﻿<!-- Views/Book/Delete.cshtml -->
+@model LibraryManagementSystem.ViewModels.BookViewModel
+
+@{
+    ViewData["Title"] = "Kitap Sil";
+}
+
+<h1>Kitap Sil</h1>
+
+<h3>Bu kitabı silmek istediğinizden emin misiniz?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Title)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Title)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.AuthorFullName)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.AuthorFullName)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Genre)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Genre)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PublishDate)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.PublishDate)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.ISBN)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.ISBN)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CopiesAvailable)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.CopiesAvailable)</dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-danger" />
+        <a asp-action="List" class="btn btn-secondary">Listeye Dön</a>
+    </form>
+</div>

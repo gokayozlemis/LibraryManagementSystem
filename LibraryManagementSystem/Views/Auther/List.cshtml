@@ -1,0 +1,38 @@
+﻿<!-- Views/Author/List.cshtml -->
+@model List<LibraryManagementSystem.ViewModels.AuthorViewModel>
+
+@{
+    ViewData["Title"] = "Yazarlar";
+}
+
+<h1>Yazar Listesi</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Yeni Yazar Ekle</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model[0].FullName)</th>
+            <th>@Html.DisplayNameFor(model => model[0].DateOfBirth)</th>
+            <th>@Html.DisplayNameFor(model => model[0].BookCount)</th>
+            <th>İşlemler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.FullName)</td>
+                <td>@Html.DisplayFor(modelItem => item.DateOfBirth)</td>
+                <td>@Html.DisplayFor(modelItem => item.BookCount)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Düzenle</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">Detaylar</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+﻿<!-- Views/Author/Delete.cshtml -->
+@model LibraryManagementSystem.ViewModels.AuthorViewModel
+
+@{
+    ViewData["Title"] = "Yazar Sil";
+}
+
+<h1>Yazar Sil</h1>
+
+<h3>Bu yazarı silmek istediğinizden emin misiniz?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.FullName)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.FullName)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.DateOfBirth)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.DateOfBirth)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.BookCount)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.BookCount)</dd>
+    </dl>
+
+    @if (Model.BookCount > 0)
+    {
+        <div class="alert alert-warning">
+            <strong>Uyarı!</strong> Bu yazarın @Model.BookCount kitabı bulunmaktadır. Yazarı sildiğinizde kitapları da silinecektir.
+        </div>
+    }
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-danger" />
+        <a asp-action="List" class="btn btn-secondary">Listeye Dön</a>
+    </form>
+</div>

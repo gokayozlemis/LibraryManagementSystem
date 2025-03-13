@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Kütüphane Yönetim Sistemine Hoş Geldiniz</h1>
+    <p>Kitaplarınızı ve yazarlarınızı yönetmek için modern ve kullanıcı dostu bir çözüm.</p>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="card-title">Kitaplar</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Kütüphanenizdeki tüm kitapları görüntüleyin, ekleyin, düzenleyin ve yönetin.</p>
+                <a asp-controller="Book" asp-action="List" class="btn btn-primary">Kitaplara Git</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5 class="card-title">Yazarlar</h5>
+            </div>
+            <div class="card-body">
+                <p class="card-text">Yazar bilgilerini görüntüleyin, yeni yazarlar ekleyin ve mevcut yazarları düzenleyin.</p>
+                <a asp-controller="Author" asp-action="List" class="btn btn-primary">Yazarlara Git</a>
+            </div>
+        </div>
+    </div>
+</div>

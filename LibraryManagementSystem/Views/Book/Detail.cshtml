@@ -1,0 +1,36 @@
+﻿<!-- Views/Book/Details.cshtml (tamamlanmış hali) -->
+@model LibraryManagementSystem.ViewModels.BookViewModel
+
+@{
+    ViewData["Title"] = "Kitap Detayları";
+}
+
+<h1>Kitap Detayları</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Title)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Title)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.AuthorFullName)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.AuthorFullName)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.Genre)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.Genre)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.PublishDate)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.PublishDate)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.ISBN)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.ISBN)</dd>
+
+        <dt class="col-sm-3">@Html.DisplayNameFor(model => model.CopiesAvailable)</dt>
+        <dd class="col-sm-9">@Html.DisplayFor(model => model.CopiesAvailable)</dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning">Düzenle</a>
+    <a asp-action="List" class="btn btn-secondary">Listeye Dön</a>
+</div>
